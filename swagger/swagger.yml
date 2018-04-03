@@ -1,0 +1,747 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /clase_entrada/:
+    get:
+      tags:
+      - clase_entrada
+      description: get ClaseEntrada
+      operationId: ClaseEntradaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.ClaseEntrada'
+        "403": {}
+    post:
+      tags:
+      - clase_entrada
+      description: create ClaseEntrada
+      operationId: ClaseEntradaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ClaseEntrada content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ClaseEntrada'
+      responses:
+        "201":
+          description: '{int} models.ClaseEntrada'
+        "403":
+          description: body is empty
+  /clase_entrada/{id}:
+    get:
+      tags:
+      - clase_entrada
+      description: get ClaseEntrada by id
+      operationId: ClaseEntradaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.ClaseEntrada'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - clase_entrada
+      description: update the ClaseEntrada
+      operationId: ClaseEntradaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ClaseEntrada content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ClaseEntrada'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.ClaseEntrada'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - clase_entrada
+      description: delete the ClaseEntrada
+      operationId: ClaseEntradaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /elemento/:
+    get:
+      tags:
+      - elemento
+      description: get Elemento
+      operationId: ElementoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Elemento'
+        "403": {}
+    post:
+      tags:
+      - elemento
+      description: create Elemento
+      operationId: ElementoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Elemento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Elemento'
+      responses:
+        "201":
+          description: '{int} models.Elemento'
+        "403":
+          description: body is empty
+  /elemento/{id}:
+    get:
+      tags:
+      - elemento
+      description: get Elemento by id
+      operationId: ElementoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Elemento'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - elemento
+      description: update the Elemento
+      operationId: ElementoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Elemento content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Elemento'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Elemento'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - elemento
+      description: delete the Elemento
+      operationId: ElementoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /entrada/:
+    get:
+      tags:
+      - estado_entrada
+      description: get Entrada
+      operationId: EntradaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Entrada'
+        "403": {}
+    post:
+      tags:
+      - estado_entrada
+      description: create Entrada
+      operationId: EntradaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Entrada content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Entrada'
+      responses:
+        "201":
+          description: '{int} models.Entrada'
+        "403":
+          description: body is empty
+  /entrada/{id}:
+    get:
+      tags:
+      - estado_entrada
+      description: get Entrada by id
+      operationId: EntradaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Entrada'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - estado_entrada
+      description: update the Entrada
+      operationId: EntradaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Entrada content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Entrada'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Entrada'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - estado_entrada
+      description: delete the Entrada
+      operationId: EntradaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /estado_entrada/:
+    get:
+      tags:
+      - estado_entrada
+      description: get Entrada
+      operationId: EntradaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Entrada'
+        "403": {}
+    post:
+      tags:
+      - estado_entrada
+      description: create Entrada
+      operationId: EntradaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Entrada content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Entrada'
+      responses:
+        "201":
+          description: '{int} models.Entrada'
+        "403":
+          description: body is empty
+  /estado_entrada/{id}:
+    get:
+      tags:
+      - estado_entrada
+      description: get Entrada by id
+      operationId: EntradaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Entrada'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - estado_entrada
+      description: update the Entrada
+      operationId: EntradaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Entrada content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Entrada'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Entrada'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - estado_entrada
+      description: delete the Entrada
+      operationId: EntradaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_contrato/:
+    get:
+      tags:
+      - tipo_contrato
+      description: get TipoContrato
+      operationId: TipoContratoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.TipoContrato'
+        "403": {}
+    post:
+      tags:
+      - tipo_contrato
+      description: create TipoContrato
+      operationId: TipoContratoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoContrato content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoContrato'
+      responses:
+        "201":
+          description: '{int} models.TipoContrato'
+        "403":
+          description: body is empty
+  /tipo_contrato/{id}:
+    get:
+      tags:
+      - tipo_contrato
+      description: get TipoContrato by id
+      operationId: TipoContratoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.TipoContrato'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_contrato
+      description: update the TipoContrato
+      operationId: TipoContratoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoContrato content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoContrato'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.TipoContrato'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_contrato
+      description: delete the TipoContrato
+      operationId: TipoContratoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.ClaseEntrada:
+    title: ClaseEntrada
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      FechaRegistro:
+        type: string
+      Id:
+        type: integer
+        format: int64
+  models.Elemento:
+    title: Elemento
+    type: object
+    properties:
+      Ajuste:
+        type: number
+        format: double
+      Bodega:
+        type: integer
+        format: int64
+      Cantidad:
+        type: number
+        format: double
+      CantidadPorAsignar:
+        type: number
+        format: double
+      Descripcion:
+        type: string
+      Estado:
+        type: boolean
+      FechaFinalPol:
+        type: string
+        format: string
+      FechaInicioPol:
+        type: string
+        format: string
+      FechaRegistro:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      IdEntrada:
+        type: integer
+        format: int64
+      Iva:
+        type: number
+        format: double
+      Marca:
+        type: string
+      Nivel:
+        type: integer
+        format: int64
+      Serie:
+        type: string
+      SubtotalSinIva:
+        type: number
+        format: double
+      TipoBien:
+        type: integer
+        format: int64
+      TipoPoliza:
+        type: integer
+        format: int64
+      TotalIva:
+        type: number
+        format: double
+      TotalIvaCon:
+        type: number
+        format: double
+      Unidad:
+        type: string
+      Valor:
+        type: number
+        format: double
+  models.Entrada:
+    title: Entrada
+    type: object
+    properties:
+      ActaRecibido:
+        type: integer
+        format: int64
+      CierreContable:
+        type: boolean
+      ClaseEntrada:
+        $ref: '#/definitions/models.ClaseEntrada'
+      Consecutivo:
+        type: integer
+        format: int64
+      Dependencia:
+        type: string
+      EstadoEntrada:
+        $ref: '#/definitions/models.EstadoEntrada'
+      EstadoRegistro:
+        type: boolean
+      FechaContrato:
+        type: string
+        format: string
+      FechaFactura:
+        type: string
+        format: string
+      FechaRegistro:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      IdCierrecontable:
+        type: number
+        format: double
+      IdentificacionOrdenador:
+        type: integer
+        format: int64
+      InfoClase:
+        type: integer
+        format: int64
+      NumeroContrato:
+        type: string
+      NumeroFactura:
+        type: string
+      Observaciones:
+        type: string
+      Ordenador:
+        type: integer
+        format: int64
+      Proveedor:
+        type: number
+        format: double
+      Sede:
+        type: string
+      Supervisor:
+        type: string
+      TipoContrato:
+        $ref: '#/definitions/models.TipoContrato'
+      TipoOrdenador:
+        type: integer
+        format: int64
+      Vigencia:
+        type: string
+  models.EstadoEntrada:
+    title: EstadoEntrada
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      FechaRegistro:
+        type: string
+      Id:
+        type: integer
+        format: int64
+  models.TipoContrato:
+    title: TipoContrato
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      FechaRegistro:
+        type: string
+      Id:
+        type: integer
+        format: int64
+tags:
+- name: tipo_contrato
+  description: |
+    TipoContratoController oprations for TipoContrato
+- name: clase_entrada
+  description: |
+    ClaseEntradaController oprations for ClaseEntrada
+- name: elemento
+  description: |
+    ElementoController oprations for Elemento
+- name: entrada
+  description: |
+    EntradaController oprations for Entrada
+- name: estado_entrada
+  description: |
+    EntradaController oprations for Entrada

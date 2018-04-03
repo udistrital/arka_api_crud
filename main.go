@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -6,8 +5,9 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	_ "github.com/lib/pq"
 	"github.com/astaxie/beego/plugins/cors"
+	_ "github.com/lib/pq"
+	"github.com/udistrital/utils_oas/apiStatusLib"
 )
 
 func init() {
@@ -18,8 +18,9 @@ func main() {
 	orm.Debug = true
 
 	if beego.BConfig.RunMode == "dev" {
-	        beego.BConfig.WebConfig.DirectoryIndex = true
-				}
+		beego.BConfig.WebConfig.DirectoryIndex = true
+		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
+	}
 
 	beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
 		AllowOrigins: []string{"*"},
@@ -34,5 +35,6 @@ func main() {
 		AllowCredentials: true,
 	}))
 
+	apistatus.Init()
 	beego.Run()
 }
